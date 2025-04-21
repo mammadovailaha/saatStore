@@ -1,0 +1,10 @@
+.filterProduct{
+    width: 100px;
+
+}
+.filterProduct section{
+    padding: 5px 10px;
+}
+.filterProduct section option{
+    width: 30px;
+}
