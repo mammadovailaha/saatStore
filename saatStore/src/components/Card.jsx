@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 function Card({ cards }) {
+ 
     return (<div className="item">
         <div className="itemImg">
             <img src={cards.image} alt="watch photo" />
@@ -14,6 +15,7 @@ function Card({ cards }) {
         </div>
         <Link to="/detail" state={cards}>
             <button className="showMore">Ətraflı bax</button>
+        
         </Link>
 
     </div>

@@ -1,6 +1,6 @@
 import "./Cards.css";
 import React, { useState, useEffect } from "react";
-import Card from "../Card";
+import Card from "../../components/Card";
 function Cards() {
     const [item, setItem] = useState([]);
     const [error, setError] = useState(null);

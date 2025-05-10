@@ -1,29 +1,33 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import "./ShowDetail.css"
-function ShowDetail(){
-    const location=useLocation();
-    const navigate=useNavigate();
+import "./ShowDetail.css";
+import { useDispatch } from "react-redux";
+import { add } from "../../components/addToCart/addToCartSlice";
+function ShowDetail() {
 
-    const cards=location.state;
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    if(!cards){
+    const cards = location.state;
+    const dispatch = useDispatch();
+    if (!cards) {
         navigate('/');
         return null;
     }
-
-    return(
+    
+    
+    return (
         <div className="card">
             <div className="cardImg">
                 <img src={cards.image} alt="" />
             </div>
             <div className="detail">
                 <h2 className="name">{cards.name}</h2>
-                 <h3>{cards.brand}</h3>
-                 <p>{cards.description}</p>
-                 <span>{cards.price} Azn</span>
-                 <div className="addCart"><button>Sifariş et</button></div>
+                <h3>{cards.brand}</h3>
+                <p>{cards.description}</p>
+                <span>{cards.price} Azn</span>
+                <div className="addCart" onClick={() => dispatch(add())} ><button>Sifariş et</button></div>
             </div>
-           
+
         </div>
     )
 }

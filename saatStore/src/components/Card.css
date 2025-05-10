@@ -19,9 +19,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 }
 .itemImg:hover{
-scale: 1.2;
+transform: scale(1.2);
 }
 
 .itemImg img {

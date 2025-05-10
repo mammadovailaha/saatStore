@@ -5,8 +5,12 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { Link } from "react-router-dom"; 
 import "/src/components/header/Header.css"
 import FilterBar from "../select/FilterBar";
+import cartIcon from '../../../public/cartIcon.svg';
+import { useSelector } from "react-redux";
 function Header() {
     // const [inputValue, setInputValue]=useState('');
+ const state=useSelector((store)=>store.counter.value);
+    console.log(state);
 
     return (
         <div className="nav">
@@ -23,7 +27,18 @@ function Header() {
                             <CiSearch className="searchIcon" />
                         </div>
                     </li>
-                    
+                    <li>
+                        <div className="cartIconWrapper">
+                            <img src={cartIcon}
+                             alt="cart icon"
+                             className="cartIcon"
+                              />
+                              <div className="cartCounterWrapper">
+                                  <span className="cartCounter">{state}</span>
+                              </div>
+                            
+                        </div>
+                    </li>
                 </ul>
             </div>
 

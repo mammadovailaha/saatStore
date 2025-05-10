@@ -1,5 +1,5 @@
 
-import Cards from "../components/cards/Cards";
+import Cards from "./cards/Cards";
 import FilterBar from "../components/select/FilterBar";
 import React, { useState, useEffect } from 'react';
 function Home() {
